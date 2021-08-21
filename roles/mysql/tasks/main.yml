@@ -1,0 +1,12 @@
+---
+# tasks file for mysql
+- name: Install MySQL
+  apt:
+    name: mysql
+    state: present
+
+- name: start mysql
+  ansible.builtin.service:
+    name: mysql
+    state: started
+    

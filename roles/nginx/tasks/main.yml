@@ -1,0 +1,24 @@
+---
+# tasks file for nginx
+- name: Install Nginx
+  apt:
+    name: nginx
+    state: present
+
+- name: start service
+  ansible.builtin.service:
+    name: nginx
+    state: started
+
+  - name: Write the apache config file
+    ansible.builtin.template:
+      src: /srv/nginx.j2
+      dest: /etc/nginx.conf
+    notify:
+    - Restart nginx
+
+  handlers:
+    - name: Restart nginx
+      ansible.builtin.service:
+        name: httpd
+        state: restarted

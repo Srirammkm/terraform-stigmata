@@ -1,0 +1,5 @@
+---
+- name: MySQL
+  hosts: mysql
+  roles:
+    role: mysql

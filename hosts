@@ -1,0 +1,2 @@
+[mysql]
+mysql-server ansible_host=10.0.1.43 ansible_ssh_private_key_file=stigmata-key.pem ansible_ssh_common_args='-o StrictHostKeyChecking=no'
